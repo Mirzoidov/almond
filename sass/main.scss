@@ -1,0 +1,216 @@
+// defualt styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Hanalei;
+  src: url(../fonts/HanaleiFill-Regular.woff);
+}
+
+@font-face {
+  font-family: Font1;
+  src: url(../fonts/playfairdisplay-variablefont_wght-webfont.woff);
+}
+
+@font-face {
+  font-family: Font2;
+  src: url(../fonts/playfairdisplay-variablefont_wght-webfont.woff2);
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+//header styles
+header {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.3rem;
+  nav {
+    .logo {
+      display: flex;
+      align-items: center;
+      img {
+        width: 80px;
+      }
+      h1 {
+        font: {
+          family: "Hanalei", sans-serif;
+          size: 40px;
+        }
+        text-transform: uppercase;
+      }
+    }
+    #menu {
+      font-size: 35px;
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      list-style: none;
+      #close {
+        display: none;
+        position: absolute;
+        top: 4%;
+        right: 12%;
+       color: black;
+        font-size: 30px;
+      }
+      li {
+        margin-left: 20px;
+        a {
+          text-decoration: none;
+          color: rgb(133, 133, 133);
+          font-size: 22px;
+          font-family: "Font2", sans-serif;
+          font-weight: bold;
+          transition: all 0.4s linear;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  .content {
+    width: 80%;
+    margin: 4rem auto;
+    text-align: center;
+
+    h1 {
+      font-size: 45px;
+      margin-bottom: 4rem;
+      text-transform: uppercase;
+      font-family: "Font1", sans-serif;
+    }
+
+    p {
+      font-size: 20px;
+      font-family: "Font2", sans-serif;
+      padding-bottom: 3rem;
+      border-bottom: 3px solid rgb(69, 68, 68);
+      line-height: 2rem;
+    }
+  }
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    font-family: "Font1", sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+    .card {
+      height: 500px;
+      text-align: center;
+      background-position: center;
+      background-size: cover;
+
+      position: relative;
+      div {
+        position: absolute;
+        transition: all 0.3s linear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0d0d0d87;
+        &:hover {
+          opacity: 1;
+        }
+        h3 {
+          text-align: center;
+          width: 180px;
+          font-family: "Font2", sans-serif;
+          color: rgb(229, 226, 226);
+          font-size: 30px;
+          font-weight: 400;
+        }
+      }
+    }
+    .card-one {
+      background-image: url("../images/1.jpg");
+    }
+    .card-two {
+      background-image: url("../images/2.jpg");
+    }
+    .card-three {
+      background-image: url("../images/3.jpg");
+    }
+    .card-four {
+      background-image: url("../images/4.jpg");
+    }
+  }
+}
+
+footer {
+  margin: 6rem 0 4rem 0;
+  text-align: center;
+  font-size: 20px;
+  p {
+    font-family: "Font1", sans-serif;
+  }
+  a {
+    color: rgb(103, 103, 103);
+    text-decoration: none;
+    &:hover {
+      color: black;
+      border-bottom: 1px solid black;
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  header {
+    nav {
+      ul {
+        width: 100%;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgb(217, 215, 215);
+        color: white;
+        text-align: center;
+        padding-top: 50%;
+        z-index: 2;
+        li {
+            margin-bottom: 1rem;
+        }
+      }
+      #menu {
+        display: block;
+      }
+    }
+  }
+  .container {
+    .content {
+      width: 90%;
+      text-align: center;
+    }
+  }
+}
